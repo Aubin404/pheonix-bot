@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phoenix BOT - Support</title>
+  <link rel="stylesheet" type="text/css" href="main2.css">
+  <link rel="icon" type="image/png" href="logo_bot_visionnaire.png">
+  <script>
+    function searchQuestions() {
+      var input = document.getElementById('search-input').value.toUpperCase();
+      var questionList = document.getElementById('question-list');
+      var questions = questionList.getElementsByTagName('li');
+
+      for (var i = 0; i < questions.length; i++) {
+        var question = questions[i].innerText.toUpperCase();
+        if (question.indexOf(input) > -1) {
+          questions[i].style.display = '';
+        } else {
+          questions[i].style.display = 'none';
+        }
+      }
+    }
+  </script>
+  <body>
+    <header>
+      <h1>Visionnaire Bot</h1>
+    </header>
+  
+    <nav>
+      <ul>
+        <li><a href="main.html">Accueil</a></li>
+        <li><a href="nouveautes.html">Nouveauté/Actus</a></li>
+        <li><a href="patch-notes.html">Patch Notes</a></li>
+        <li><a href="support1.html">Support</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="questions">
+        <div class="container">
+          <h2>Questions fréquentes</h2>
+  
+        <!-- Barre de recherche -->
+        <div class="search-bar">
+            <input type="text" id="search-input" class="search-input" placeholder="Rechercher une question" onkeyup="searchQuestions()">
+          </div>
+  
+          <!-- Liste des questions -->
+          <br>
+          <ul id="question-list" class="question-list">
+            <li>1. Comment ajouter le bot à mon serveur ?</li>
+            <!-- Ajoutez ici les autres questions -->
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</head>
